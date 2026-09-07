@@ -1,0 +1,292 @@
+/* go to whatFonts to check the font and then google that font and see this url in a page that has the font name. 
+copy paste it here and then use the needed fonts for font-family  */
+
+@import url("https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: black;
+}
+
+.main {
+  background-image: url(assets/images/bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: max(1600px, 100vw); /*while resizing it should zoom in*/
+  height: 70vh;
+  position: relative;
+}
+
+.main .box {
+  height: 70vh;
+  width: 100%;
+  opacity: 0.69; /*added a black box with opacity to blur it a lil bit*/
+  background-color: black;
+  position: absolute;
+  top: 0;
+}
+
+nav {
+  display: flex;
+  max-width: 80vw;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+
+nav img {
+  width: 130px;
+
+  /*to make netflix pop out of the opacity black waala background*/
+  position: relative;
+  z-index: 10;
+}
+
+nav button {
+  /*to make buttons pop out of the opacity black waala background*/
+
+  position: relative;
+  z-index: 10;
+}
+
+.hero {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative; /*to make it pop out*/
+  height: calc(100% - 100px); /*remember to give space around operators in calc*/
+  font-family: "Martel Sans", sans-serif;
+  gap: 23px;
+  padding: 0 30px;
+}
+
+/* why did we keep it as .hero> ?????? 
+its bcz when we kept it simply as .hero and styled it, tho it had another div inside and iska property,
+ie first child waala got applied inside the div too. which is gadbad. tho we kept ">" , thaa ki only the
+IMMEDIATE CHILD of hero gets the stylings and shouldnt affect another divs inside it. Okay? 34:02 cwh*/
+
+.hero > :first-child {
+  /*to design first line*/
+  font-weight: bolder;
+  font-size: 48px;
+  text-align: center;
+}
+
+.hero > :nth-child(2) {
+  /*to design second line*/
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+}
+
+.hero > :nth-child(3) {
+  /*to design first line*/
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+}
+
+.separation {
+  height: 7px;
+  background-color: rgba(128, 128, 128, 0.681);
+}
+
+.btn {
+  padding: 3px 8px;
+  font-weight: 400;
+  background-color: rgba(165, 163, 163, 0.084);
+  border: 1px solid white;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-red {
+  background-color: red;
+  color: white;
+  padding: 3px 24px;
+  font-size: 20px;
+  border-radius: 4px;
+  font-weight: 400;
+}
+
+.btn-red-sm {
+  background-color: red;
+  color: white;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.main input {
+  padding: 7px 101px 8px 14px;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: rgba(23, 23, 23, 0.2); /*transparent*/
+  border-color: rgb(213, 220, 217);
+  color: white;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/*when clicking input, the placeholder should disappear*/
+.main input::placeholder {
+  font-weight: 500;
+  color: white;
+  opacity: 0.4;
+  font-size: 16px;
+  transition: opacity 0.4s ease;
+}
+
+.main input:focus::placeholder {
+  opacity: 0;
+}
+
+.first {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 70vw;
+  margin: auto;
+}
+
+@media screen and (max-width:1300px) {
+
+  .first{
+    flex-wrap: wrap;
+  }
+  
+}
+
+.secImg {
+  position: relative;
+}
+
+.secImg img {
+  width: 30vw;
+  z-index: 20; /*to make it inside the tv*/
+  position: relative;
+  padding-top: 10px;
+}
+
+.secImg video {
+  position: absolute;
+  top: 51px;
+  right: 0;
+  width: 27vw;
+}
+
+.first > div {
+  display: flex;
+  flex-direction: column;
+
+}
+.first > div :nth-child(1) {
+  font-size: 48px;
+  font-weight: bolder;
+}
+
+.first > div :nth-child(2) {
+  font-size: 24px;
+}
+
+.faq {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.faq h2 {
+  font-size: 34px;
+}
+.faqbox {
+  font-size: 24px;
+  display: flex;
+  background-color: grey;
+  padding: 14px;
+  margin: 34px auto;
+  max-width: 60vw;
+  justify-content: space-between;
+  color: white;
+  cursor: pointer;
+  transition: all 1s ease-out; /*give transition inside the main containers and not with :hover or stuffs like that*/
+}
+
+.faqbox:hover {
+  background-color: rgba(128, 128, 128, 0.31);
+}
+
+.faq svg {
+  filter: invert(1);
+}
+
+.sign :nth-child(1) {
+  color: white;
+}
+
+.sign input {
+  padding: 7px 101px 8px 14px;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: rgba(23, 23, 23, 0.2); /*transparent*/
+  border-color: rgb(213, 220, 217);
+  color: white;
+}
+
+.hero-buttons2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding-top: 15px;
+}
+.sign {
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
+/* GRID */
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  color: white;
+  max-width: 60vw;
+  margin: auto;
+  padding: 20px;
+}
+
+footer > :nth-child(1) {
+  color: white;
+  display: flex;
+  align-items: center;
+  max-width: 60vw;
+  padding: 20px;
+  margin: auto;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer a{
+  text-decoration: none;
+  color: white;
+}
